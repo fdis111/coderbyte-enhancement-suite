@@ -45,7 +45,7 @@ async function extractTestResultsFromPage() {
     return [...line.children].map((item, j) => {
       if (j === actionsIndex) {
         const url =
-          i === 0 ? item.innerText.trim() : item.querySelector("a").href;
+          i === 0 ? item.innerText.trim() : item.querySelector("a")?.href;
         return url;
       }
       return item.innerText.trim();
